@@ -83,6 +83,20 @@ class UnitConfig {
     });
     this.writeSync(unitConfig);
   }
+
+  /**
+   * Delete property from each unit's config object
+   * @param {String} prop The property name
+   */
+  static deletePropertyFromAll(prop) {
+    if (typeof prop !== 'string')
+      throw new TypeError('prop should be a string');
+    const unitConfig = this.readSync();
+    Object.values(unitConfig).forEach((config) => {
+      delete config[prop];
+    });
+    this.writeSync(unitConfig);
+  }
 }
 
 module.exports = UnitConfig;
