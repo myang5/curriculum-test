@@ -3,7 +3,6 @@ const fs = require('fs');
 
 const UNIT_CONFIG = path.resolve(__dirname, './unitConfig.json');
 
-
 /**
  * Utility class to manipulate the unit config file.
  */
@@ -14,7 +13,9 @@ class UnitConfig {
    * @returns the unit config as a JS object
    */
   static read(cb) {
-    return JSON.parse(fs.readFile(UNIT_CONFIG, cb));
+    return cb
+      ? JSON.parse(fs.readFile(UNIT_CONFIG))
+      : JSON.parse(fs.readFile(UNIT_CONFIG), cb);
   }
 
   /**
@@ -23,7 +24,9 @@ class UnitConfig {
    * @returns the unit config as a JS object
    */
   static readSync(cb) {
-    return JSON.parse(fs.readFileSync(UNIT_CONFIG, cb));
+    return cb
+      ? JSON.parse(fs.readFileSync(UNIT_CONFIG))
+      : JSON.parse(fs.readFileSync(UNIT_CONFIG), cb);
   }
 
   /**
@@ -32,6 +35,8 @@ class UnitConfig {
    * @param {Function} [cb] Optional callback to be executed after reading
    */
   static write(newConfig, cb) {
+    if (!cb)
+      return fs.writeFile(UNIT_CONFIG, JSON.stringify(newConfig, null, 2));
     fs.writeFile(UNIT_CONFIG, JSON.stringify(newConfig, null, 2), cb);
   }
 
@@ -41,6 +46,8 @@ class UnitConfig {
    * @param {Function} [cb] Optional callback to be executed after reading
    */
   static writeSync(newConfig, cb) {
+    if (!cb)
+      return fs.writeFileSync(UNIT_CONFIG, JSON.stringify(newConfig, null, 2));
     fs.writeFileSync(UNIT_CONFIG, JSON.stringify(newConfig, null, 2), cb);
   }
 
