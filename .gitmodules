@@ -55,3 +55,6 @@
 [submodule "unit-4-snake"]
 	path = unit-4-snake
 	url = https://github.com/myang5/unit-4-snake.git
+[submodule "eslint-boilerplates"]
+	path = eslint-boilerplates
+	url = https://github.com/willhack/eslint-boilerplates.git
