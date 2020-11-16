@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "add-submodules": "node ./utils/addSubmodules.js",
-    "view-each-module": "bash ./utils/printEachModule.sh"
+    "view-each-module": "bash ./utils/printEachModule.sh",
+    "update-eslint": "node ./utils/updateEslint.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/myang5/curriculum-test#readme",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "nodegit": "^0.27.0"
   }
 }
