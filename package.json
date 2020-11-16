@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "add-submodules": "node ./utils/addSubmodules.js",
+    "add-unit-submodules": "node ./utils/addUnitSubmodules.js",
     "view-each-module": "bash ./utils/printEachModule.sh",
     "update-eslint": "node ./utils/updateEslint.js"
   },
