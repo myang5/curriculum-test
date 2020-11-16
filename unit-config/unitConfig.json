@@ -1,78 +1,118 @@
 {
   "unit-1-js-fundamentals": {
     "origin": "https://github.com/myang5/unit-1-js-fundamentals.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-2SB-arrays": {
     "origin": "https://github.com/myang5/unit-2SB-arrays.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-2-data-structure": {
     "origin": "https://github.com/myang5/unit-2-data-structure.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-3SB-list": {
     "origin": "https://github.com/myang5/unit-3SB-list.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-3-algorithms": {
     "origin": "https://github.com/myang5/unit-3-algorithms.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-4-snake": {
     "origin": "https://github.com/myang5/unit-4-snake.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-project-slack": {
     "origin": "https://github.com/myang5/unit-project-slack.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-6SB-simon": {
     "origin": "https://github.com/myang5/unit-6SB-simon.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-6-react-tic-tac-toe": {
     "origin": "https://github.com/myang5/unit-6-react-tic-tac-toe.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json",
+      "eslint-react.json"
+    ]
   },
   "unit-7-react-redux": {
     "origin": "https://github.com/myang5/unit-7-react-redux.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json",
+      "eslint-react.json"
+    ]
   },
   "unit-8SB-node-pages": {
     "origin": "https://github.com/myang5/unit-8SB-node-pages.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-9SB-text-adventure": {
     "origin": "https://github.com/myang5/unit-9SB-text-adventure.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-9-express": {
     "origin": "https://github.com/myang5/unit-9-express.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-10SB-databases": {
     "origin": "https://github.com/myang5/unit-10SB-databases.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-10-databases-new": {
     "origin": "https://github.com/myang5/unit-10-databases-new.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-11SB-express": {
     "origin": "https://github.com/myang5/unit-11SB-express.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-11-authentication": {
     "origin": "https://github.com/myang5/unit-11-authentication.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-12-testing": {
     "origin": "https://github.com/myang5/unit-12-testing.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   },
   "unit-13-devops": {
     "origin": "https://github.com/myang5/unit-13-devops.git",
-    "eslint": []
+    "eslint": [
+      "eslint-basic.json"
+    ]
   }
 }
