@@ -1,1 +1,1 @@
-git submodule foreach 'gh repo view'
+git submodule foreach 'git remote -v'
