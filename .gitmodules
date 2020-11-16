@@ -1,0 +1,57 @@
+[submodule "unit-9SB-text-adventure"]
+	path = unit-9SB-text-adventure
+	url = https://github.com/myang5/unit-9SB-text-adventure.git
+[submodule "unit-6SB-simon"]
+	path = unit-6SB-simon
+	url = https://github.com/myang5/unit-6SB-simon.git
+[submodule "unit-6-react-tic-tac-toe"]
+	path = unit-6-react-tic-tac-toe
+	url = https://github.com/myang5/unit-6-react-tic-tac-toe.git
+[submodule "unit-9-express"]
+	path = unit-9-express
+	url = https://github.com/myang5/unit-9-express.git
+[submodule "unit-12-testing"]
+	path = unit-12-testing
+	url = https://github.com/myang5/unit-12-testing.git
+[submodule "unit-7-react-redux"]
+	path = unit-7-react-redux
+	url = https://github.com/myang5/unit-7-react-redux.git
+[submodule "unit-11SB-express"]
+	path = unit-11SB-express
+	url = https://github.com/myang5/unit-11SB-express.git
+[submodule "unit-project-slack"]
+	path = unit-project-slack
+	url = https://github.com/myang5/unit-project-slack.git
+[submodule "unit-13-devops"]
+	path = unit-13-devops
+	url = https://github.com/myang5/unit-13-devops.git
+[submodule "unit-1-js-fundamentals"]
+	path = unit-1-js-fundamentals
+	url = https://github.com/myang5/unit-1-js-fundamentals.git
+[submodule "unit-2SB-arrays"]
+	path = unit-2SB-arrays
+	url = https://github.com/myang5/unit-2SB-arrays.git
+[submodule "unit-8SB-node-pages"]
+	path = unit-8SB-node-pages
+	url = https://github.com/myang5/unit-8SB-node-pages.git
+[submodule "unit-10-databases-new"]
+	path = unit-10-databases-new
+	url = https://github.com/myang5/unit-10-databases-new.git
+[submodule "unit-10SB-databases"]
+	path = unit-10SB-databases
+	url = https://github.com/myang5/unit-10SB-databases.git
+[submodule "unit-3SB-list"]
+	path = unit-3SB-list
+	url = https://github.com/myang5/unit-3SB-list.git
+[submodule "unit-11-authentication"]
+	path = unit-11-authentication
+	url = https://github.com/myang5/unit-11-authentication.git
+[submodule "unit-3-algorithms"]
+	path = unit-3-algorithms
+	url = https://github.com/myang5/unit-3-algorithms.git
+[submodule "unit-2-data-structure"]
+	path = unit-2-data-structure
+	url = https://github.com/myang5/unit-2-data-structure.git
+[submodule "unit-4-snake"]
+	path = unit-4-snake
+	url = https://github.com/myang5/unit-4-snake.git

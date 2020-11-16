@@ -1,0 +1,59 @@
+{
+  "unit-1-js-fundamentals": {
+    "origin": "https://github.com/myang5/unit-1-js-fundamentals.git"
+  },
+  "unit-2SB-arrays": {
+    "origin": "https://github.com/myang5/unit-2SB-arrays.git"
+  },
+  "unit-2-data-structure": {
+    "origin": "https://github.com/myang5/unit-2-data-structure.git"
+  },
+  "unit-3SB-list": {
+    "origin": "https://github.com/myang5/unit-3SB-list.git"
+  },
+  "unit-3-algorithms": {
+    "origin": "https://github.com/myang5/unit-3-algorithms.git"
+  },
+  "unit-4-snake": {
+    "origin": "https://github.com/myang5/unit-4-snake.git"
+  },
+  "unit-project-slack": {
+    "origin": "https://github.com/myang5/unit-project-slack.git"
+  },
+  "unit-6SB-simon": {
+    "origin": "https://github.com/myang5/unit-6SB-simon.git"
+  },
+  "unit-6-react-tic-tac-toe": {
+    "origin": "https://github.com/myang5/unit-6-react-tic-tac-toe.git"
+  },
+  "unit-7-react-redux": {
+    "origin": "https://github.com/myang5/unit-7-react-redux.git"
+  },
+  "unit-8SB-node-pages": {
+    "origin": "https://github.com/myang5/unit-8SB-node-pages.git"
+  },
+  "unit-9SB-text-adventure": {
+    "origin": "https://github.com/myang5/unit-9SB-text-adventure.git"
+  },
+  "unit-9-express": {
+    "origin": "https://github.com/myang5/unit-9-express.git"
+  },
+  "unit-10SB-databases": {
+    "origin": "https://github.com/myang5/unit-10SB-databases.git"
+  },
+  "unit-10-databases-new": {
+    "origin": "https://github.com/myang5/unit-10-databases-new.git"
+  },
+  "unit-11SB-express": {
+    "origin": "https://github.com/myang5/unit-11SB-express.git"
+  },
+  "unit-11-authentication": {
+    "origin": "https://github.com/myang5/unit-11-authentication.git"
+  },
+  "unit-12-testing": {
+    "origin": "https://github.com/myang5/unit-12-testing.git"
+  },
+  "unit-13-devops": {
+    "origin": "https://github.com/myang5/unit-13-devops.git"
+  }
+}

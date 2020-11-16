@@ -1,0 +1,25 @@
+{
+  "name": "curriculum-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "add-submodules": "node ./utils/addSubmodules.js",
+    "view-each-module": "bash ./utils/printEachModule.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myang5/curriculum-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myang5/curriculum-test/issues"
+  },
+  "homepage": "https://github.com/myang5/curriculum-test#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
