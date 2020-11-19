@@ -1,6 +1,6 @@
 {
   "env": {
-    "browser": true
+    "browser": false
   },
   "plugins": ["import", "react", "jsx-a11y"],
   "extends": [

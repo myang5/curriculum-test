@@ -22,6 +22,7 @@
   "homepage": "https://github.com/myang5/curriculum-test#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "nodegit": "^0.27.0"
+    "nodegit": "^0.27.0",
+    "webpack-merge": "^5.4.0"
   }
 }
