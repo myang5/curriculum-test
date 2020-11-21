@@ -26,7 +26,6 @@ const COMMIT_MSG = 'update eslint config';
 // the exact repo needs to be specified if working on a forked copy
 const PR_TITLE = `Update ${ESLINTRC}`;
 let PR_BODY = `Updating config file based on edits made to the following templates: %TEMPLATE`;
-const PR_REPO = 'myang5/unit-6-react-tic-tac-toe';
 
 (async function () {
   /*
@@ -63,8 +62,8 @@ const PR_REPO = 'myang5/unit-6-react-tic-tac-toe';
   console.log('Units that need to be updated:'.yellow);
   const unitsToUpdate = Object.keys(unitConfig).filter((unit) => {
     for (let i = 0; i < updatedFiles.length; i++) {
-      if (unit === 'unit-6-react-tic-tac-toe') {
-        // if (unitConfig[unit].eslint.includes(updatedFiles[i])) {
+      // if (unit === 'unit-6-react-tic-tac-toe') {
+      if (unitConfig[unit].eslint.includes(updatedFiles[i])) {
         console.log(unit);
         return true;
       }
@@ -164,18 +163,23 @@ const PR_REPO = 'myang5/unit-6-react-tic-tac-toe';
           }
         );
       })
-      .then(() => {
+      .then(async () => {
         /*
          * Create a PR from the feature branch to the main/master branch
          */
+        // const remote = await repo.getRemote('origin');
+        // const remoteUrl = remote.url();
+        // console.log(remoteUrl);
         // exec(
-        //   `gh pr create --repo ${PR_REPO} --title "${PR_TITLE}" --body "${PR_BODY}" `,
+        //   `gh pr create --repo ${remoteUrl} --title "${PR_TITLE}" --body "${PR_BODY}" `,
         //   { cwd: repo.workdir() },
         //   (error) => {
         //     if (error) throw error;
         //   }
         // );
-        // merge the PR
+        /*
+         * TODO: Merge the PR
+         */
       })
       .then(() => console.log('Finished (sort of)!'.green))
       .catch((err) => {
