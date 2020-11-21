@@ -19,7 +19,7 @@ const ROOT = path.resolve(__dirname, '..');
 const ESLINTRC = '.eslintrc.json';
 
 // values needed to create the commit
-const FEAT_BRANCH = 'update-eslint';
+const FEAT_BRANCH = process.env.npm_config_feat_branch || 'update-eslint';
 const COMMIT_MSG = 'update eslint config';
 
 // values used in the `gh pr` command
@@ -64,7 +64,7 @@ const PR_REPO = 'myang5/unit-6-react-tic-tac-toe';
   const unitsToUpdate = Object.keys(unitConfig).filter((unit) => {
     for (let i = 0; i < updatedFiles.length; i++) {
       if (unit === 'unit-6-react-tic-tac-toe') {
-      // if (unitConfig[unit].eslint.includes(updatedFiles[i])) {
+        // if (unitConfig[unit].eslint.includes(updatedFiles[i])) {
         console.log(unit);
         return true;
       }
@@ -88,7 +88,9 @@ const PR_REPO = 'myang5/unit-6-react-tic-tac-toe';
     let head;
     Repository.open(`${ROOT}/${unit}`)
       .then(async (repoResult) => {
-        // create a feature branch and checkout to it
+        /*
+         * Create a feature branch and checkout to it
+         */
         repo = repoResult;
         head = await repo.getHeadCommit();
         const branchRef = await repo.createBranch(FEAT_BRANCH, head, true);
@@ -106,7 +108,9 @@ const PR_REPO = 'myang5/unit-6-react-tic-tac-toe';
         else throw err;
       })
       .then(async () => {
-        // generate new eslintrc based on the templates
+        /*
+         * Generate new eslintrc based on the templates
+         */
         const key = JSON.stringify(unitConfig[unit].eslint);
         if (!eslintCache[key]) {
           const objects = unitConfig[unit].eslint.map((configName) =>
@@ -127,8 +131,10 @@ const PR_REPO = 'myang5/unit-6-react-tic-tac-toe';
           path.resolve(repo.workdir(), ESLINTRC),
           JSON.stringify(eslintCache[key], null, 2)
         );
-        // commit the new eslintrc
-        // not 100% sure what this code is doing but it's copied from NodeGit's example lol
+        /*
+         * Commit the new eslintrc
+         */
+        // not 100% sure what this code is doing but it's copied from NodeGit's example
         // https://github.com/nodegit/nodegit/blob/master/examples/add-and-commit.js
         index = await repo.refreshIndex();
         await index.addByPath(ESLINTRC);
@@ -145,7 +151,11 @@ const PR_REPO = 'myang5/unit-6-react-tic-tac-toe';
         );
       })
       .then(() => {
-        // push commit by executing git push in the repo's directory
+        /*
+         * Push commit by executing git push in the repo's directory
+         */
+        // I tried to push with nodegit but there's a bunch of auth hoops
+        // to jump through so I went back to the CLI with exec
         exec(
           `git push origin ${FEAT_BRANCH}`,
           { cwd: repo.workdir() },
@@ -153,30 +163,21 @@ const PR_REPO = 'myang5/unit-6-react-tic-tac-toe';
             if (error) throw error;
           }
         );
-        // I tried to push with nodegit but there's a bunch of auth hoops
-        // to jump through so I went back to the CLI with exec lol
-        // // referenced from this example:
-        // // https://github.com/nodegit/nodegit/blob/master/examples/push.js
-        // const remote = await repo.getRemote('origin');
-        // return remote.push(['refs/heads/update-eslint:refs/heads/update-eslint'], {
-        //   callbacks: {
-        //     credentials: function (url, userName) {
-        //       return Cred.sshKeyFromAgent(userName);
-        //     },
-        //   },
-        // });
       })
       .then(() => {
-        // create a PR from the feature branch to the main/master branch
-        exec(
-          `gh pr create --repo ${PR_REPO} --title "${PR_TITLE}" --body "${PR_BODY}" `,
-          { cwd: repo.workdir() },
-          (error) => {
-            if (error) throw error;
-          }
-        );
+        /*
+         * Create a PR from the feature branch to the main/master branch
+         */
+        // exec(
+        //   `gh pr create --repo ${PR_REPO} --title "${PR_TITLE}" --body "${PR_BODY}" `,
+        //   { cwd: repo.workdir() },
+        //   (error) => {
+        //     if (error) throw error;
+        //   }
+        // );
         // merge the PR
       })
+      .then(() => console.log('Finished (sort of)!'.green))
       .catch((err) => {
         console.log(err);
       });

@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "add-unit-submodules": "node ./utils/addUnitSubmodules.js",
-    "view-each-module": "bash ./utils/printEachModule.sh",
-    "update-eslint": "node ./utils/updateEslint.js"
+    "view-submodules": "bash ./utils/printEachModule.sh",
+    "update-eslint": "cross-env node ./utils/updateEslint.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/myang5/curriculum-test#readme",
   "dependencies": {
     "colors": "^1.4.0",
+    "cross-env": "^7.0.2",
     "nodegit": "^0.27.0",
     "webpack-merge": "^5.4.0"
   }
