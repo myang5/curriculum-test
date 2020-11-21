@@ -11,7 +11,7 @@ Don't forget to `npm install`!
 - Open `unit-config/eslint-boilerplates/eslint-react.json` and make a change to the file. Save the file but don't commit the change.
 - Run `npm run update-eslint --feat-branch=<your branch name>`
 - The terminal should indicate that changes were detected in `eslint-react.json`, and that `unit-6-react-tic-tac-toe` and `unit-7-react-redux` need to be updated (these repos list `eslint-react.json` in their `eslint` key in the `unitConfig.json` file).
-- After the script finishes running, go to the links listed in the two units `origin` key in `unitConfig.json` file. You'll see that there are new feature branches with the change, ready to be PRed and merged (still working on doing that programmatically).
+- After the script finishes running, go to the links listed in the two units `origin` key in `unitConfig.json` file. You'll see that there are new PRs for each repo, ready to be merged (still working on doing that programmatically).
 
 ## unitConfig.json and UnitConfig
 
@@ -28,7 +28,7 @@ unit-name: {
 
 ## Scripts
 
-- `add-unit-submodules` - a script that iterates over the `unitConfig.json` and adds each `origin` value as a submodule
+- `add-submodules` - a script that iterates over the `unitConfig.json` and adds each `origin` value as a submodule
 
 - `view-submodules` - a test bash script to test the `git submodule foreach` command
 

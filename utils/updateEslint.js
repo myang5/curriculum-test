@@ -13,6 +13,7 @@ const { mergeWithCustomize, customizeArray } = require('webpack-merge');
 require('colors');
 const UnitConfig = require('../unit-config');
 const EslintConfig = require('../unit-config/eslint-boilerplates');
+const githubUtils = require('./githubUtils');
 
 const unitConfig = UnitConfig.readSync();
 const ROOT = path.resolve(__dirname, '..');
@@ -48,9 +49,11 @@ let PR_BODY = `Updating config file based on edits made to the following templat
     return file;
   });
   // TODO: instead of exiting, confirm whether user wants to proceed anyway
+  // if yes, update all units
   if (!updatedFiles.length) {
     return console.log('No changes found in any eslint config files.'.red);
   }
+
   console.log('Changes found in these eslint config files:'.yellow);
   updatedFiles.forEach((file) => console.log(file));
   PR_BODY = PR_BODY.replace('%TEMPLATE', updatedFiles.join(', '));
@@ -62,7 +65,6 @@ let PR_BODY = `Updating config file based on edits made to the following templat
   console.log('Units that need to be updated:'.yellow);
   const unitsToUpdate = Object.keys(unitConfig).filter((unit) => {
     for (let i = 0; i < updatedFiles.length; i++) {
-      // if (unit === 'unit-6-react-tic-tac-toe') {
       if (unitConfig[unit].eslint.includes(updatedFiles[i])) {
         console.log(unit);
         return true;
@@ -79,7 +81,6 @@ let PR_BODY = `Updating config file based on edits made to the following templat
   // memoize eslint config calculation since many of the units will
   // probably have the same config
   const eslintCache = {};
-
   for (let unit of unitsToUpdate) {
     process.stdout.write(`updating ${unit} ...\n`);
     let repo;
@@ -149,41 +150,28 @@ let PR_BODY = `Updating config file based on edits made to the following templat
           [head]
         );
       })
+      .then(() => githubUtils.pushCommit(FEAT_BRANCH, repo.workdir()))
+      .then(() =>
+        githubUtils.createPrToMain(
+          FEAT_BRANCH,
+          repo.workdir(),
+          PR_TITLE,
+          PR_BODY
+        )
+      )
+      .catch((err) => {
+        // throw error if it's not caused by the PR already existing
+        if (!err.message.includes('already exists')) throw err;
+      })
+      // ERROR: kep getting error like ! Pull request #2 (Update .eslintrc.json) 
+      // can't be merged right now; try again in a few seconds
+      .then(() => githubUtils.mergePrToMain(FEAT_BRANCH, repo.workdir()))
       .then(() => {
-        /*
-         * Push commit by executing git push in the repo's directory
-         */
-        // I tried to push with nodegit but there's a bunch of auth hoops
-        // to jump through so I went back to the CLI with exec
-        exec(
-          `git push origin ${FEAT_BRANCH}`,
-          { cwd: repo.workdir() },
-          (error) => {
-            if (error) throw error;
-          }
-        );
+        console.log('Finished (sort of)!'.green);
       })
-      .then(async () => {
-        /*
-         * Create a PR from the feature branch to the main/master branch
-         */
-        // const remote = await repo.getRemote('origin');
-        // const remoteUrl = remote.url();
-        // console.log(remoteUrl);
-        // exec(
-        //   `gh pr create --repo ${remoteUrl} --title "${PR_TITLE}" --body "${PR_BODY}" `,
-        //   { cwd: repo.workdir() },
-        //   (error) => {
-        //     if (error) throw error;
-        //   }
-        // );
-        /*
-         * TODO: Merge the PR
-         */
-      })
-      .then(() => console.log('Finished (sort of)!'.green))
       .catch((err) => {
         console.log(err);
       });
   }
+  console.log('\n');
 })();

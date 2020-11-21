@@ -2,7 +2,7 @@
   "env": {
     "browser": true
   },
-  "plugins": ["import", "react", "jsx-a11y"],
+  "plugins": ["import", "react"],
   "extends": [
     "plugin:import/errors",
     "plugin:react/recommended",

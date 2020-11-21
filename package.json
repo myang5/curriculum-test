@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "add-unit-submodules": "node ./utils/addUnitSubmodules.js",
+    "add-submodules": "node ./utils/addSubmodules.js",
     "view-submodules": "bash ./utils/printEachModule.sh",
-    "update-eslint": "cross-env node ./utils/updateEslint.js"
+    "update-eslint": "node ./utils/updateEslint.js"
   },
   "repository": {
     "type": "git",
