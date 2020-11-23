@@ -21,7 +21,7 @@ class UnitConfig {
   /**
    * Read and parse the unit config file synchronously.
    * @param {Function} [cb] Optional callback to be executed after reading
-   * @returns the unit config as a JS object
+   * @return the unit config as a JS object
    */
   static readSync(cb) {
     return cb
@@ -64,7 +64,7 @@ class UnitConfig {
       throw new TypeError('prop should be a string');
     const unitConfig = this.readSync();
     if (!Object.prototype.hasOwnProperty.call(unitConfig, prop))
-      throw new ReferenceError('reqquested unit does not exist in config');
+      throw new ReferenceError('requested unit does not exist in config');
     unitConfig[unit][prop] = value ? value : null;
     this.writeSync(unitConfig);
   }
